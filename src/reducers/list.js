@@ -1,10 +1,16 @@
 import { LIST_ACTIONS } from "../actions/list";
 
-const initState = {
+const initialState = {
     value: '',
 };
 
-const reducer = (state=initState, action) => {
+/**
+ * Normal Reducer
+ * @param {*} state 
+ * @param {*} action 
+ * @returns 
+ */
+const reducer = (state=initialState, action) => {
     const { type, payload } = action;
     if (type === LIST_ACTIONS.SET) {
         return {
@@ -13,7 +19,7 @@ const reducer = (state=initState, action) => {
         };
     }
     if (type === LIST_ACTIONS.CLEAR) {
-        return initState;
+        return initialState;
     }
     return state;
 };

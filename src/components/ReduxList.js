@@ -9,6 +9,7 @@ export default function ReduxList() {
 
     const handleSetClick = () => {
         dispatch(setList(value));
+        setValue('');
     };
 
     const handleClearClick = () => {
@@ -17,7 +18,7 @@ export default function ReduxList() {
 
     return (
         <>
-            <h3>{list}</h3>
+            <h3>List: {list}</h3>
             <input value={value} onChange={(e) => setValue(e.target.value)} />
             <button onClick={handleSetClick} >SET List</button>
             <button onClick={handleClearClick} >Clear List</button>
