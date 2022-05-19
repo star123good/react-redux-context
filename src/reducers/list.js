@@ -1,11 +1,13 @@
 import { LIST_ACTIONS } from "../actions/list";
 
-const initialState = {
+export const initialState = {
     value: '',
 };
 
 /**
  * Normal Reducer
+ * It can be used in reducers of React-Redux,
+ * Or reducers of Context.
  * @param {*} state 
  * @param {*} action 
  * @returns 
@@ -19,7 +21,10 @@ const reducer = (state=initialState, action) => {
         };
     }
     if (type === LIST_ACTIONS.CLEAR) {
-        return initialState;
+        return {
+            ...state,
+            ...initialState,
+        };
     }
     return state;
 };
